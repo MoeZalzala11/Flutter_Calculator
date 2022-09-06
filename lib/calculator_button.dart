@@ -23,11 +23,15 @@ class CalculatorButton extends StatelessWidget {
         color: Colors.red,
         padding: const EdgeInsets.all(8),
         alignment: Alignment.center,
-        child: InkWell(
-          onTap: onPress,
+        child: TextButton(
+          onPressed: onPress,
           child: Text(
             label,
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
         ));
   }
