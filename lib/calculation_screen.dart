@@ -21,7 +21,7 @@ class CalculationScreen extends StatelessWidget {
           style: TextStyle(fontSize: 48,
           fontWeight: FontWeight.w600),
         ),
-        SizedBox(height: 10,)
+         SizedBox(height: 10,)
       ],
     );
   }
