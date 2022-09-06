@@ -24,25 +24,46 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
               child: Container(
                 padding: const EdgeInsets.fromLTRB(16, 8, 0, 0),
                 width: double.infinity,
-                child: const CalculationScreen(),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: const [
+                    Text(
+                      '11+27',
+                      style: TextStyle(
+                          fontSize: 32,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w300),
+                    ),
+                    //SizedBox(height:10),
+                    Text(
+                      '38',
+                      style:
+                          TextStyle(fontSize: 48, fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    )
+                  ],
+                ),
               )),
           Expanded(
             flex: 2,
             child: Container(
               width: double.infinity,
-
               color: const Color(0xff23252D),
               child: Column(
-                children: [CalculatorButton(
-                  labelColor: Colors.white,
-                  label: '0',
-                  onPress: () {
-                    if (kDebugMode) {
-                      print('hello');
-                    }
-                    setState(() { });
-                  },
-                ),
+                children: [
+                  CalculatorButton(
+                    labelColor: Colors.white,
+                    label: '0',
+                    onPress: () {
+                      if (kDebugMode) {
+                        print('hello');
+                      }
+                      setState(() {});
+                    },
+                  ),
                 ],
               ),
             ),

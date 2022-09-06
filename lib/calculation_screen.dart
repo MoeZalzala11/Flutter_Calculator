@@ -19,7 +19,7 @@ class CalculationScreen extends StatelessWidget {
         Text(
           '38',
           style: TextStyle(fontSize: 48,
-          fontWeight: FontWeight.w600),
+          fontWeight: FontWeight.w500),
         ),
          SizedBox(height: 10,)
       ],
