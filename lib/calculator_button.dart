@@ -17,22 +17,19 @@ class CalculatorButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: 80,
-        height: 80,
-        color: Colors.red,
-        padding: const EdgeInsets.all(8),
-        alignment: Alignment.center,
-        child: TextButton(
-          onPressed: onPress,
-          child: Text(
-            label,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+    return SizedBox(
+      height: 64,
+      child: TextButton(
+        onPressed: onPress,
+        child: Text(
+          label,
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

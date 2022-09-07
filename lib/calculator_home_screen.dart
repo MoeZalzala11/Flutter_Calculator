@@ -54,57 +54,62 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
               padding: const EdgeInsets.fromLTRB(8, 24, 8, 24),
               color: const Color(0xff23252D),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      CalculatorButton(
-                        labelColor: Colors.white,
-                        label: '7',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
-                      ),
-                      CalculatorButton(
-                        labelColor: Colors.white,
-                        label: '8',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
-                      ),
-                      CalculatorButton(
-                        labelColor: Colors.white,
-                        label: '9',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
-                      ),
-                      CalculatorButton(
-                        labelColor: Colors.white,
-                        label: 'x',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
-                      ),
-                    ],
+                  SizedBox(
+                    height: 64,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        CalculatorButton(
+                          labelColor: Colors.white,
+                          label: '7',
+                          onPress: () {
+                            if (kDebugMode) {
+                              print('hello');
+                            }
+                            setState(() {});
+                          },
+                        ),
+                        CalculatorButton(
+                          labelColor: Colors.white,
+                          label: '8',
+                          onPress: () {
+                            if (kDebugMode) {
+                              print('hello');
+                            }
+                            setState(() {});
+                          },
+                        ),
+                        CalculatorButton(
+                          labelColor: Colors.white,
+                          label: '9',
+                          onPress: () {
+                            if (kDebugMode) {
+                              print('hello');
+                            }
+                            setState(() {});
+                          },
+                        ),
+                        CalculatorButton(
+                          labelColor: Colors.white,
+                          label: 'x',
+                          onPress: () {
+                            if (kDebugMode) {
+                              print('hello');
+                            }
+                            setState(() {});
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                   Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       CalculatorButton(
                         labelColor: Colors.white,
-                        label: '7',
+                        label: '4',
                         onPress: () {
                           if (kDebugMode) {
                             print('hello');
@@ -114,7 +119,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       ),
                       CalculatorButton(
                         labelColor: Colors.white,
-                        label: '8',
+                        label: '5',
                         onPress: () {
                           if (kDebugMode) {
                             print('hello');
@@ -124,7 +129,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       ),
                       CalculatorButton(
                         labelColor: Colors.white,
-                        label: '9',
+                        label: '6',
                         onPress: () {
                           if (kDebugMode) {
                             print('hello');
@@ -134,50 +139,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       ),
                       CalculatorButton(
                         labelColor: Colors.white,
-                        label: 'x',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
-                      ),
-                    ],),
-                  Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      CalculatorButton(
-                        labelColor: Colors.white,
-                        label: '7',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
-                      ),
-                      CalculatorButton(
-                        labelColor: Colors.white,
-                        label: '8',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
-                      ),
-                      CalculatorButton(
-                        labelColor: Colors.white,
-                        label: '9',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
-                      ),
-                      CalculatorButton(
-                        labelColor: Colors.white,
-                        label: 'x',
+                        label: '-',
                         onPress: () {
                           if (kDebugMode) {
                             print('hello');
@@ -190,7 +152,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                     children: [
                       CalculatorButton(
                         labelColor: Colors.white,
-                        label: '7',
+                        label: '1',
                         onPress: () {
                           if (kDebugMode) {
                             print('hello');
@@ -200,7 +162,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       ),
                       CalculatorButton(
                         labelColor: Colors.white,
-                        label: '8',
+                        label: '2',
                         onPress: () {
                           if (kDebugMode) {
                             print('hello');
@@ -210,7 +172,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       ),
                       CalculatorButton(
                         labelColor: Colors.white,
-                        label: '9',
+                        label: '3',
                         onPress: () {
                           if (kDebugMode) {
                             print('hello');
@@ -220,7 +182,50 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       ),
                       CalculatorButton(
                         labelColor: Colors.white,
-                        label: 'x',
+                        label: '+',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
+                    ],),
+                  Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      CalculatorButton(
+                        labelColor: Colors.white,
+                        label: '+/-',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
+                      CalculatorButton(
+                        labelColor: Colors.white,
+                        label: '0',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
+                      CalculatorButton(
+                        labelColor: Colors.white,
+                        label: '.',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
+                      CalculatorButton(
+                        labelColor: Colors.white,
+                        label: '=',
                         onPress: () {
                           if (kDebugMode) {
                             print('hello');
