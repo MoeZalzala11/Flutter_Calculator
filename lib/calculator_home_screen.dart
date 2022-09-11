@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'calculation_screen.dart';
@@ -94,7 +95,17 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                         ),
                         CalculatorButton(
                           labelColor: Colors.white,
-                          label: 'x',
+                          label: '×',
+                          onPress: () {
+                            if (kDebugMode) {
+                              print('hello');
+                            }
+                            setState(() {});
+                          },
+                        ),
+                        CalculatorButton(
+                          labelColor: Colors.white,
+                          label: '( )',
                           onPress: () {
                             if (kDebugMode) {
                               print('hello');
@@ -147,6 +158,16 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                           setState(() {});
                         },
                       ),
+                      CalculatorButton(
+                        labelColor: Colors.white,
+                        label: '/',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
                     ],),
                   Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -190,12 +211,23 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                           setState(() {});
                         },
                       ),
-                    ],),
+                      CalculatorButton(
+                        labelColor: Colors.white,
+                        label: '%',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
+                    ],
+                  ),
                   Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       CalculatorButton(
                         labelColor: Colors.white,
-                        label: '+/-',
+                        label: 'C',
                         onPress: () {
                           if (kDebugMode) {
                             print('hello');
@@ -223,15 +255,20 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                           setState(() {});
                         },
                       ),
-                      CalculatorButton(
-                        labelColor: Colors.white,
-                        label: '=',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                      Flexible(
+                        fit: FlexFit.tight,
+                        flex: 3,
+                        child: CalculatorButton(
+                          labelColor: Colors.white,
+                          label: '=',
+                          onPress: () {
+                            if (kDebugMode) {
+                              print('hello');
+                            }
+                            setState(() {});
+                          },
+                          backgroundColor: Colors.redAccent,
+                        ),
                       ),
                     ],),
                 ],

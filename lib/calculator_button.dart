@@ -17,8 +17,10 @@ class CalculatorButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 64,
+      width: 64,
+      color: backgroundColor,
       child: TextButton(
         onPressed: onPress,
         child: Text(
