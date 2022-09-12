@@ -41,4 +41,14 @@ class CalculatorButton extends StatelessWidget {
       ),
     );
   }
+
+  Widget _getCalculatorButton(String label, VoidCallback onPress,
+      Color labelColor, double width, double height) {
+    return CalculatorButton(
+        label: label,
+        onPress: onPress,
+        labelColor: labelColor,
+        width: width,
+        height: height);
+  }
 }
