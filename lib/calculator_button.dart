@@ -7,28 +7,35 @@ class CalculatorButton extends StatelessWidget {
       required this.label,
       required this.onPress,
       required this.labelColor,
-      this.backgroundColor})
+      this.backgroundColor,
+      required this.width,
+      required this.height})
       : super(key: key);
 
   final String label;
   final VoidCallback onPress;
   final Color labelColor;
   final Color? backgroundColor;
+  final double width;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 64,
-      width: 64,
+      height: height,
+      width: width,
       color: backgroundColor,
-      child: TextButton(
-        onPressed: onPress,
-        child: Text(
-          label,
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxHeight: height, maxWidth: width),
+        child: TextButton(
+          onPressed: onPress,
+          child: Text(
+            label,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
         ),
       ),
