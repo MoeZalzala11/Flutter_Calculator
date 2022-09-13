@@ -6,7 +6,6 @@ class CalculatorButton extends StatelessWidget {
       {Key? key,
       required this.label,
       required this.onPress,
-      required this.labelColor,
       this.backgroundColor,
       required this.width,
       required this.height})
@@ -14,7 +13,6 @@ class CalculatorButton extends StatelessWidget {
 
   final String label;
   final VoidCallback onPress;
-  final Color labelColor;
   final Color? backgroundColor;
   final double width;
   final double height;
@@ -40,15 +38,5 @@ class CalculatorButton extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Widget _getCalculatorButton(String label, VoidCallback onPress,
-      Color labelColor, double width, double height) {
-    return CalculatorButton(
-        label: label,
-        onPress: onPress,
-        labelColor: labelColor,
-        width: width,
-        height: height);
   }
 }
