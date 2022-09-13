@@ -266,8 +266,8 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
     required String label,
     required VoidCallback onPress,
     Color backgroundColor = const Color((0xff23252D)),
-    double width = 64,
-    double height = 64,
+    double width = 72,
+    double height = 72,
   }) {
     return CalculatorButton(
         label: label,
