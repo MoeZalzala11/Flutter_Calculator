@@ -241,6 +241,8 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       ),
                       getCalculatorButton(
                         label: '=',
+                        width: 132,
+                        height: 64,
                         backgroundColor: Colors.redAccent,
                         onPress: () {
                           if (kDebugMode) {
