@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CalculatorButton extends StatelessWidget {
@@ -30,8 +29,8 @@ class CalculatorButton extends StatelessWidget {
           child: Text(
             label,
             style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+              fontSize: 32,
+              fontWeight: FontWeight.w500,
               color: Colors.white,
             ),
           ),

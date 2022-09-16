@@ -21,10 +21,15 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
     }
   }
   void clearPressed(){
-    firstInput = '';
-    secondInput = '';
-    result = "";
-    operator = "";
+    setState(() {
+      firstInput = '';
+      secondInput = '';
+      result = "";
+      operator = "";
+      if(kDebugMode){
+        print('000');
+      }
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -42,21 +47,21 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
+                  children: [
                     Text(
-                      '11+27',
-                      style: TextStyle(
+                      firstInput+operator+secondInput,
+                      style: const TextStyle(
                           fontSize: 32,
                           color: Colors.white70,
                           fontWeight: FontWeight.w300),
                     ),
                     //SizedBox(height:10),
                     Text(
-                      '38',
+                      result,
                       style:
-                          TextStyle(fontSize: 48, fontWeight: FontWeight.w500),
+                          const TextStyle(fontSize: 48, fontWeight: FontWeight.w500),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     )
                   ],
@@ -70,65 +75,63 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
               color: const Color(0xff23252D),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: 64,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        getCalculatorButton(
-                          label: '7',
-                          onPress: () {
-                            if (kDebugMode) {
-                              print('hello');
-                            }
-                            setState(() {});
-                          },
-                        ),
-                        getCalculatorButton(
-                          label: '8',
-                          onPress: () {
-                            if (kDebugMode) {
-                              print('hello');
-                            }
-                            setState(() {});
-                          },
-                        ),
-                        getCalculatorButton(
-                          label: '9',
-                          onPress: () {
-                            if (kDebugMode) {
-                              print('hello');
-                            }
-                            setState(() {});
-                          },
-                        ),
-                        getCalculatorButton(
-                          label: '×',
-                          onPress: () {
-                            if (kDebugMode) {
-                              print('hello');
-                            }
-                            setState(() {});
-                          },
-                        ),
-                        getCalculatorButton(
-                          label: '( )',
-                          onPress: () {
-                            if (kDebugMode) {
-                              print('hello');
-                            }
-                            setState(() {});
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      getCalculatorButton( 
+                      getCalculatorButton(
+                        label: '7',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
+                      getCalculatorButton(
+                        label: '8',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
+                      getCalculatorButton(
+                        label: '9',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
+                      getCalculatorButton(
+                        label: '×',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
+                      getCalculatorButton(
+                        label: '( )',
+                        onPress: () {
+                          if (kDebugMode) {
+                            print('hello');
+                          }
+                          setState(() {});
+                        },
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      getCalculatorButton(
                         label: '4',
                         onPress: () {
                           if (kDebugMode) {
@@ -175,8 +178,9 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 8),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       getCalculatorButton(
                         label: '1',
@@ -225,16 +229,14 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 8),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       getCalculatorButton(
                         label: 'C',
                         onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
+                          clearPressed();
                         },
                       ),
                       getCalculatorButton(
@@ -283,7 +285,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
     required VoidCallback onPress,
     Color backgroundColor = const Color((0xff23252D)),
     double width = 72,
-    double height = 72,
+    double height = 96,
   }) {
     return CalculatorButton(
         label: label,
