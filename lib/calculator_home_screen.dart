@@ -20,7 +20,12 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
 
     }
   }
-
+  void clearPressed(){
+    firstInput = '';
+    secondInput = '';
+    result = "";
+    operator = "";
+  }
   @override
   Widget build(BuildContext context) {
     return SizedBox(
