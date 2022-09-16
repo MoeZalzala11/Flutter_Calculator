@@ -16,9 +16,14 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
   String operator = "";
 
   void numberPressed(String clickedNum){
-    if(firstInput != ''){
-
-    }
+    setState(() {
+      if(operator == ''){
+        firstInput = firstInput+clickedNum;
+      }
+      if(kDebugMode){
+        print(clickedNum);
+      }
+    });
   }
   void clearPressed(){
     setState(() {

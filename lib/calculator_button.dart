@@ -11,7 +11,7 @@ class CalculatorButton extends StatelessWidget {
       : super(key: key);
 
   final String label;
-  final VoidCallback onPress;
+  final Function onPress;
   final Color? backgroundColor;
   final double width;
   final double height;
@@ -25,7 +25,7 @@ class CalculatorButton extends StatelessWidget {
       child: ConstrainedBox(
         constraints: BoxConstraints(maxHeight: height, maxWidth: width),
         child: TextButton(
-          onPressed: onPress,
+          onPressed: () => onPress(label),
           child: Text(
             label,
             style: const TextStyle(
