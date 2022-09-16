@@ -10,6 +10,17 @@ class CalculatorHomePage extends StatefulWidget {
 }
 
 class _CalculatorHomePageState extends State<CalculatorHomePage> {
+  String firstInput = "";
+  String secondInput = "";
+  String result = "";
+  String operator = "";
+
+  void numberPressed(String clickedNum){
+    if(firstInput != ''){
+
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -112,7 +123,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      getCalculatorButton(
+                      getCalculatorButton( 
                         label: '4',
                         onPress: () {
                           if (kDebugMode) {
