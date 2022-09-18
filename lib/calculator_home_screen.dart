@@ -38,6 +38,30 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
       }
     });
   }
+  void operatorPressed(String clickedOperator){
+    setState(() {
+      if(operator == ''){
+        operator = clickedOperator;
+      } else if(operator != clickedOperator){
+        operator = clickedOperator;
+      }else {
+        equalPressed();
+      }
+    });
+  }
+  void equalPressed(){
+    setState(() {
+      if(operator == '+'){
+        firstInput = (int.parse(firstInput) + int.parse(secondInput)) as String;
+      }else if (operator == '-'){
+        firstInput = (int.parse(firstInput) - int.parse(secondInput)) as String;
+      }else if (operator == '×'){
+        firstInput = (int.parse(firstInput) * int.parse(secondInput)) as String;
+      }else if (operator == '/'){
+        firstInput = (int.parse(firstInput) / int.parse(secondInput)) as String;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
