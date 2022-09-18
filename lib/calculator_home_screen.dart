@@ -19,6 +19,8 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
     setState(() {
       if(operator == ''){
         firstInput = firstInput+clickedNum;
+      } else {
+        secondInput = secondInput+clickedNum;
       }
       if(kDebugMode){
         print(clickedNum);
@@ -36,6 +38,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
       }
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
