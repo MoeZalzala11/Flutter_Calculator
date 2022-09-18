@@ -25,14 +25,14 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
       }
     });
   }
-  void clearPressed(){
+  void clearPressed(String clickedClear){
     setState(() {
       firstInput = '';
       secondInput = '';
       result = "";
       operator = "";
       if(kDebugMode){
-        print('000');
+        print(clickedClear);
       }
     });
   }
@@ -87,30 +87,15 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                     children: [
                       getCalculatorButton(
                         label: '7',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                       getCalculatorButton(
                         label: '8',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                       getCalculatorButton(
                         label: '9',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                       getCalculatorButton(
                         label: '×',
@@ -123,12 +108,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       ),
                       getCalculatorButton(
                         label: '( )',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                     ],
                   ),
@@ -138,30 +118,15 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                     children: [
                       getCalculatorButton(
                         label: '4',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                       getCalculatorButton(
                         label: '5',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                       getCalculatorButton(
                         label: '6',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                       getCalculatorButton(
                         label: '-',
@@ -189,30 +154,15 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                     children: [
                       getCalculatorButton(
                         label: '1',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                       getCalculatorButton(
                         label: '2',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                       getCalculatorButton(
                         label: '3',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                       getCalculatorButton(
                         label: '+',
@@ -240,18 +190,11 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                     children: [
                       getCalculatorButton(
                         label: 'C',
-                        onPress: () {
-                          clearPressed();
-                        },
+                        onPress: clearPressed
                       ),
                       getCalculatorButton(
                         label: '0',
-                        onPress: () {
-                          if (kDebugMode) {
-                            print('hello');
-                          }
-                          setState(() {});
-                        },
+                        onPress: numberPressed,
                       ),
                       getCalculatorButton(
                         label: '.',
@@ -287,7 +230,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
 
   Widget getCalculatorButton({
     required String label,
-    required VoidCallback onPress,
+    required Function onPress,
     Color backgroundColor = const Color((0xff23252D)),
     double width = 72,
     double height = 96,
