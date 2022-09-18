@@ -21,10 +21,15 @@ class CalculatorButton extends StatelessWidget {
     return Container(
       height: height,
       width: width,
-      color: backgroundColor,
       child: ConstrainedBox(
         constraints: BoxConstraints(maxHeight: height, maxWidth: width),
         child: TextButton(
+          style: TextButton.styleFrom(
+            backgroundColor: backgroundColor,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(16))
+            )
+          ),
           onPressed: () => onPress(label),
           child: Text(
             label,

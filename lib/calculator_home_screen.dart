@@ -75,7 +75,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
         secondInput = '';
         operator = '';
       }
-      if(kDebugMode){
+      if (kDebugMode) {
         print(operator);
       }
     });
@@ -208,7 +208,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      getCalculatorButton(label: 'C', onPress: clearPressed),
+                      getCalculatorButton(label: '⌫', onPress: clearPressed),
                       getCalculatorButton(
                         label: '0',
                         onPress: numberPressed,
