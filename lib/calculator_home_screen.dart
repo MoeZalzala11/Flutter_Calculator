@@ -28,6 +28,21 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
     });
   }
 
+  void onBackSpacePressed(String clickedBackSpace) {
+    setState(() {
+      if (secondInput != '') {
+        secondInput = secondInput.substring(0, secondInput.length - 1);
+      } else if (operator != '') {
+        operator = '';
+      } else {
+        firstInput = firstInput.substring(0, firstInput.length - 1);
+      }
+      if(kDebugMode){
+        print(clickedBackSpace);
+      }
+    });
+  }
+
   void clearPressed(String clickedClear) {
     setState(() {
       firstInput = '';
@@ -208,7 +223,8 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      getCalculatorButton(label: '⌫', onPress: clearPressed),
+                      getCalculatorButton(
+                          label: '⌫ ', onPress: onBackSpacePressed),
                       getCalculatorButton(
                         label: '0',
                         onPress: numberPressed,
