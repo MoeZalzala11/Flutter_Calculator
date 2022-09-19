@@ -37,20 +37,20 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
       } else {
         firstInput = firstInput.substring(0, firstInput.length - 1);
       }
-      if(kDebugMode){
+      if (kDebugMode) {
         print(clickedBackSpace);
       }
     });
   }
 
-  void clearPressed(String clickedClear) {
+  void clearPressed(String clickedClearButton) {
     setState(() {
       firstInput = '';
       secondInput = '';
       result = "";
       operator = "";
-      if (kDebugMode) {
-        print(clickedClear);
+      if(kDebugMode){
+        print(clickedClearButton);
       }
     });
   }
@@ -148,22 +148,27 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       getCalculatorButton(
                         label: '7',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '8',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '9',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '×',
                         onPress: operatorPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '( )',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                     ],
                   ),
@@ -174,22 +179,27 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       getCalculatorButton(
                         label: '4',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '5',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '6',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '-',
                         onPress: operatorPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '/',
                         onPress: operatorPressed,
+                        onLongPress: () {},
                       ),
                     ],
                   ),
@@ -200,22 +210,27 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       getCalculatorButton(
                         label: '1',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '2',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '3',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '+',
                         onPress: operatorPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '%',
                         onPress: operatorPressed,
+                        onLongPress: () {},
                       ),
                     ],
                   ),
@@ -224,10 +239,14 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       getCalculatorButton(
-                          label: '⌫ ', onPress: onBackSpacePressed),
+                          label: '⌫ ',
+                          onPress: onBackSpacePressed,
+                          onLongPress: clearPressed
+                      ),
                       getCalculatorButton(
                         label: '0',
                         onPress: numberPressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '.',
@@ -237,6 +256,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                           }
                           setState(() {});
                         },
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '=',
@@ -244,6 +264,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                         height: 64,
                         backgroundColor: Colors.redAccent,
                         onPress: equalPressed,
+                        onLongPress: () {},
                       ),
                     ],
                   ),
@@ -259,6 +280,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
   Widget getCalculatorButton({
     required String label,
     required Function onPress,
+    required Function onLongPress,
     Color backgroundColor = const Color((0xff23252D)),
     double width = 72,
     double height = 96,
@@ -266,6 +288,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
     return CalculatorButton(
         label: label,
         onPress: onPress,
+        onLongPress: onLongPress,
         backgroundColor: backgroundColor,
         width: width,
         height: height);

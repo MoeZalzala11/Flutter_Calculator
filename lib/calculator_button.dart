@@ -7,18 +7,20 @@ class CalculatorButton extends StatelessWidget {
       required this.onPress,
       this.backgroundColor,
       required this.width,
-      required this.height})
+      required this.height,
+      required this.onLongPress})
       : super(key: key);
 
   final String label;
   final Function onPress;
+  final Function onLongPress;
   final Color? backgroundColor;
   final double width;
   final double height;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: height,
       width: width,
       child: ConstrainedBox(
@@ -31,6 +33,7 @@ class CalculatorButton extends StatelessWidget {
             )
           ),
           onPressed: () => onPress(label),
+          onLongPress: () => onLongPress(label),
           child: Text(
             label,
             style: const TextStyle(
