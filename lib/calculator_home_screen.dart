@@ -61,7 +61,10 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
         operator = clickedOperator;
       } else if (operator != clickedOperator) {
         operator = clickedOperator;
-      } else {
+      } else if(firstInput == ''){
+        firstInput = '0';
+        operator = clickedOperator;
+      }else {
         equalPressed(clickedOperator);
       }
     });
@@ -171,8 +174,8 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                         onLongPress: () {},
                       ),
                       getCalculatorButton(
-                        label: '( )',
-                        onPress: numberPressed,
+                        label: 'C',
+                        onPress: clearPressed,
                         onLongPress: () {},
                       ),
                     ],
@@ -246,7 +249,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                       getCalculatorButton(
                           label: '⌫ ',
                           onPress: onBackSpacePressed,
-                          onLongPress: clearPressed
+                          onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '0',
