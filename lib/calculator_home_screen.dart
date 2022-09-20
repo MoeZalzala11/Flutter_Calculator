@@ -49,7 +49,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
       secondInput = '';
       result = "";
       operator = "";
-      if(kDebugMode){
+      if (kDebugMode) {
         print(clickedClearButton);
       }
     });
@@ -57,14 +57,14 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
 
   void operatorPressed(String clickedOperator) {
     setState(() {
-      if (operator == '') {
+      if (firstInput == '') {
+        firstInput = '0';
+        operator = clickedOperator;
+      } else if (operator == '') {
         operator = clickedOperator;
       } else if (operator != clickedOperator) {
         operator = clickedOperator;
-      } else if(firstInput == ''){
-        firstInput = '0';
-        operator = clickedOperator;
-      }else {
+      } else {
         equalPressed(clickedOperator);
       }
     });
@@ -92,7 +92,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
         firstInput = result;
         secondInput = '';
         operator = '';
-      } else if(operator == '%'){
+      } else if (operator == '%') {
         result = ('${int.parse(firstInput) % int.parse(secondInput)}');
         firstInput = result;
         secondInput = '';
@@ -247,9 +247,9 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       getCalculatorButton(
-                          label: '⌫ ',
-                          onPress: onBackSpacePressed,
-                          onLongPress: () {},
+                        label: '⌫ ',
+                        onPress: onBackSpacePressed,
+                        onLongPress: () {},
                       ),
                       getCalculatorButton(
                         label: '0',
