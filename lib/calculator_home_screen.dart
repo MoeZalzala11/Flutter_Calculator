@@ -89,6 +89,11 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
         firstInput = result;
         secondInput = '';
         operator = '';
+      } else if(operator == '%'){
+        result = ('${int.parse(firstInput) % int.parse(secondInput)}');
+        firstInput = result;
+        secondInput = '';
+        operator = '';
       }
       if (kDebugMode) {
         print(operator);
