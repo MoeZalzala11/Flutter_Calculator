@@ -21,10 +21,10 @@ class CalculatorButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height,
-      width: width,
+      // height: height,
+      // width: width,
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxHeight: height, maxWidth: width),
+        constraints: BoxConstraints(minHeight: height, minWidth: width),
         child: TextButton(
           style: TextButton.styleFrom(
             backgroundColor: backgroundColor,
@@ -37,7 +37,7 @@ class CalculatorButton extends StatelessWidget {
           child: Text(
             label,
             style: const TextStyle(
-              fontSize: 32,
+              fontSize: 24,
               fontWeight: FontWeight.w500,
               color: Colors.white,
             ),
