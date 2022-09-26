@@ -144,146 +144,145 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
             flex: 2,
             child: Container(
               color: const Color(0xff23252D),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        getCalculatorButton(
-                          label: '7',
-                          onPress: numberPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '8',
-                          onPress: numberPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '9',
-                          onPress: numberPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '×',
-                          onPress: operatorPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: 'C',
-                          onPress: clearPressed,
-                          onLongPress: () {},
-                        ),
-                      ],
+              width: MediaQuery.of(context).size.width,
+              child: IntrinsicWidth(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          getCalculatorButton(
+                            label: '7',
+                            onPress: numberPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '8',
+                            onPress: numberPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '9',
+                            onPress: numberPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '×',
+                            onPress: operatorPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: 'C',
+                            onPress: clearPressed,
+                            onLongPress: () {},
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        getCalculatorButton(
-                          label: '4',
-                          onPress: numberPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '5',
-                          onPress: numberPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '6',
-                          onPress: numberPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '-',
-                          onPress: operatorPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '/',
-                          onPress: operatorPressed,
-                          onLongPress: () {},
-                        ),
-                      ],
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          getCalculatorButton(
+                            label: '4',
+                            onPress: numberPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '5',
+                            onPress: numberPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '6',
+                            onPress: numberPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '-',
+                            onPress: operatorPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '/',
+                            onPress: operatorPressed,
+                            onLongPress: () {},
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        getCalculatorButton(
-                          label: '1',
-                          onPress: numberPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '2',
-                          onPress: numberPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '3',
-                          onPress: numberPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '+',
-                          onPress: operatorPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '%',
-                          onPress: operatorPressed,
-                          onLongPress: () {},
-                        ),
-                      ],
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          getCalculatorButton(
+                            label: '1',
+                            onPress: numberPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '2',
+                            onPress: numberPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '3',
+                            onPress: numberPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '+',
+                            onPress: operatorPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '%',
+                            onPress: operatorPressed,
+                            onLongPress: () {},
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        getCalculatorButton(
-                          label: '⌫ ',
-                          onPress: onBackSpacePressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '0',
-                          onPress: numberPressed,
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '.',
-                          onPress: () {
-                            if (kDebugMode) {
-                              print('hello');
-                            }
-                            setState(() {});
-                          },
-                          onLongPress: () {},
-                        ),
-                        getCalculatorButton(
-                          label: '=',
-                          width: 132,
-                          height: 64,
-                          backgroundColor: Colors.redAccent,
-                          onPress: equalPressed,
-                          onLongPress: () {},
-                        ),
-                      ],
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          getCalculatorButton(
+                            label: '⌫ ',
+                            onPress: onBackSpacePressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '0',
+                            onPress: numberPressed,
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '.',
+                            onPress: () {
+                              if (kDebugMode) {
+                                print('hello');
+                              }
+                              setState(() {});
+                            },
+                            onLongPress: () {},
+                          ),
+                          getCalculatorButton(
+                            label: '=',
+                            width: 132,
+                            height: 64,
+                            backgroundColor: Colors.redAccent,
+                            onPress: equalPressed,
+                            onLongPress: () {},
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
